@@ -18,8 +18,8 @@ using System.Windows;
             await Task.Delay(DelayBeforeFade); //Holds until the required delay before the fade has been reached.
             do
             {
-                target.Opacity = 0 + OpacTick; //Alters the target's opacity based on the current loop cylce.
                 OpacTick += FadeAmount; //Alters the counter by the pre calculated alteration amount.
+                target.Opacity = 0 + OpacTick; //Alters the target's opacity based on the current loop cylce.
                 await Task.Delay(1); //Halts the loop
 
             } while (OpacTick <= 1); //Loops finished when the target's opacity is 1.
@@ -27,12 +27,11 @@ using System.Windows;
             await Task.Delay(DelayBeforeOutFade); //Holds until the required delay before the fade out has been reached
             do
             {
-                target.Opacity = 1 - OpacTick; //Alters the target's opacity based on the current loop cylce.
                 OpacTick += FadeAmount; //Alters the counter by the pre calculated alteration amount.
+                target.Opacity = 1 - OpacTick; //Alters the target's opacity based on the current loop cylce.
                 await Task.Delay(1); //Halts the loop
 
             } while (OpacTick <= 1); //Loops finished when the target's opacity is 0 and the counter is therefor 1.
-            target.Opacity = 0;
             return true;
         }
         //*********************************************************************************************************************************************************
